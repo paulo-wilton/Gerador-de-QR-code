@@ -4,29 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Gerador QR Code</title>
+    <title>Gerador de QR Code</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="login">
-        <h1>Gerador QR Code</h1>
-        <p>Entre para continuar</p>
+    <main>
+        <h1>Gerador de QR Code</h1>
+
+        <p>Digite um link e gere um QR Code para abrir esse endereço pelo celular.</p>
 
         <form id="formulario">
-            <label for="usuario">Usuário</label>
-            <input type="text" id="usuario"
-                placeholder="Digite seu usuário" required>
+            <label for="link">Link do site</label>
 
-            <label for="senha">Senha</label>
-            <input type="password" id="senha"
-                placeholder="Digite sua senha" required>
+            <input
+                id="link"
+                name="link"
+                type="url"
+                placeholder="https://exemplo.com"
+                value="https://paulo-wilton.github.io/Aniversario/"
+                required
+            >
 
-            <button type="submit">Entrar</button>
-
-            <p id="mensagem"></p>
+            <button type="submit">Gerar QR Code</button>
         </form>
+
+        <section id="resultado" aria-live="polite">
+            <div id="qrcode"></div>
+            <button id="baixarPNG" type="button">Baixar QR Code (PNG)</button>
+            <button id="baixarJPEG" type="button">Baixar QR Code (JPEG)</button>
+        </section>
+
+        <p id="mensagem" role="status"></p>
     </main>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
