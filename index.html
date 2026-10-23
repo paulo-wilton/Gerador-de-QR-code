@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de QR Code</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Gerador de QR Code</h1>
+
+        <p>Digite um link e gere um QR Code para abrir esse endereço pelo celular.</p>
+
+        <form id="formulario">
+            <label for="link">Link do site</label>
+
+            <input
+                id="link"
+                name="link"
+                type="url"
+                placeholder="https://exemplo.com"
+                value="https://paulo-wilton.github.io/Aniversario/"
+                required
+            >
+
+            <button type="submit">Gerar QR Code</button>
+        </form>
+
+        <section id="resultado" aria-live="polite">
+            <div id="qrcode"></div>
+            <button id="baixarPNG" type="button">Baixar QR Code (PNG)</button>
+            <button id="baixarJPEG" type="button">Baixar QR Code (JPEG)</button>
+        </section>
+
+        <p id="mensagem" role="status"></p>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
